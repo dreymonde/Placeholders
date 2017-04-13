@@ -56,7 +56,7 @@ extension UITextField.PlaceholderChange {
             transition.duration = 0.35
             transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             transition.type = kCATransitionFade
-            textField.subviews.first(where: { $0 is UILabel })?.layer.add(transition, forKey: nil)
+            textField.subviews.first(where: { NSStringFromClass(type(of: $0)) == "UITextFieldLabel" })?.layer.add(transition, forKey: nil)
             textField.placeholder = placeholder
         }
     }

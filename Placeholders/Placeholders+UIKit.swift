@@ -39,7 +39,7 @@ extension UITextField.PlaceholderChange {
     public static func caTransition(_ transition: @escaping () -> CATransition) -> UITextField.PlaceholderChange {
         return UITextField.PlaceholderChange { (placeholder, textField) in
             let transition = transition()
-            textField.subviews.first(where: { $0 is UILabel })?.layer.add(transition, forKey: nil)
+            textField.subviews.first(where: { NSStringFromClass(type(of: $0)) == "UITextFieldLabel" })?.layer.add(transition, forKey: nil)
             textField.placeholder = placeholder
         }
     }
