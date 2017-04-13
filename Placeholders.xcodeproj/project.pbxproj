@@ -10,6 +10,8 @@
 		7C35B63C1E9F925B004A2BB0 /* Placeholders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C35B6321E9F925A004A2BB0 /* Placeholders.framework */; };
 		7C35B6411E9F925B004A2BB0 /* PlaceholdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35B6401E9F925B004A2BB0 /* PlaceholdersTests.swift */; };
 		7C35B6431E9F925B004A2BB0 /* Placeholders.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C35B6351E9F925A004A2BB0 /* Placeholders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C35B64D1E9F9280004A2BB0 /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35B64C1E9F9280004A2BB0 /* Placeholders.swift */; };
+		7C35B64F1E9F949C004A2BB0 /* Placeholders+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35B64E1E9F949C004A2BB0 /* Placeholders+UIKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		7C35B63B1E9F925B004A2BB0 /* PlaceholdersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceholdersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C35B6401E9F925B004A2BB0 /* PlaceholdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholdersTests.swift; sourceTree = "<group>"; };
 		7C35B6421E9F925B004A2BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C35B64C1E9F9280004A2BB0 /* Placeholders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholders.swift; sourceTree = "<group>"; };
+		7C35B64E1E9F949C004A2BB0 /* Placeholders+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Placeholders+UIKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				7C35B6351E9F925A004A2BB0 /* Placeholders.h */,
 				7C35B6361E9F925A004A2BB0 /* Info.plist */,
+				7C35B64C1E9F9280004A2BB0 /* Placeholders.swift */,
+				7C35B64E1E9F949C004A2BB0 /* Placeholders+UIKit.swift */,
 			);
 			path = Placeholders;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 					7C35B6311E9F925A004A2BB0 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WK35K3FV5Z;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					7C35B63A1E9F925B004A2BB0 = {
@@ -198,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C35B64F1E9F949C004A2BB0 /* Placeholders+UIKit.swift in Sources */,
+				7C35B64D1E9F9280004A2BB0 /* Placeholders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +333,7 @@
 		7C35B6471E9F925B004A2BB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WK35K3FV5Z;
@@ -332,10 +342,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Placeholders/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anysuggestion.Placeholders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +355,7 @@
 		7C35B6481E9F925B004A2BB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WK35K3FV5Z;
@@ -351,6 +364,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Placeholders/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anysuggestion.Placeholders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +376,7 @@
 		7C35B64A1E9F925B004A2BB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WK35K3FV5Z;
 				INFOPLIST_FILE = PlaceholdersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +389,7 @@
 		7C35B64B1E9F925B004A2BB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WK35K3FV5Z;
 				INFOPLIST_FILE = PlaceholdersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +418,7 @@
 				7C35B6481E9F925B004A2BB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C35B6491E9F925B004A2BB0 /* Build configuration list for PBXNativeTarget "PlaceholdersTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +427,7 @@
 				7C35B64B1E9F925B004A2BB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
