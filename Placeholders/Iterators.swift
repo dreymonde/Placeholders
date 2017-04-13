@@ -35,10 +35,12 @@ public extension IteratorProtocol {
     
 }
 
+// Inspired by Nate Cook: https://gist.github.com/natecook1000/0ac03efe07f647b46dae
+
 extension MutableCollection where Indices.Iterator.Element == Index {
     
     /// Shuffles the contents of this collection.
-    public mutating func shuffle() {
+    internal mutating func shuffle() {
         let count = self.count
         guard count > 1 else { return }
         for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: count, to: 1, by: -1)) {
@@ -53,7 +55,7 @@ extension MutableCollection where Indices.Iterator.Element == Index {
 
 extension Sequence {
     
-    public func shuffled() -> [Iterator.Element] {
+    internal func shuffled() -> [Iterator.Element] {
         var shuffling = Array(self)
         shuffling.shuffle()
         return shuffling

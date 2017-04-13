@@ -64,7 +64,7 @@ extension UITextField.PlaceholderChange {
         }
     }
     
-    public static func push(_ direction: TransitionPushDirection,
+    public static func pushTransition(_ direction: TransitionPushDirection,
                             duration: TimeInterval = 0.35,
                             timingFunction: CAMediaTimingFunction = .init(name: kCAMediaTimingFunctionEaseInEaseOut)) -> UITextField.PlaceholderChange {
         return .caTransition {
@@ -84,7 +84,7 @@ extension Placeholders {
     public func start(interval: TimeInterval,
                       fireInitial: Bool = true,
                       textField: UITextField,
-                      usingChange change: UITextField.PlaceholderChange) {
+                      animation change: UITextField.PlaceholderChange) {
         self.start(interval: interval, fireInitial: fireInitial) { [weak textField, weak self] (placeholder) in
             if let textField = textField {
                 change.setNewPlaceholder(placeholder, on: textField)
