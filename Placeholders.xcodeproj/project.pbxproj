@@ -12,6 +12,7 @@
 		7C35B6431E9F925B004A2BB0 /* Placeholders.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C35B6351E9F925A004A2BB0 /* Placeholders.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C35B64D1E9F9280004A2BB0 /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35B64C1E9F9280004A2BB0 /* Placeholders.swift */; };
 		7C35B64F1E9F949C004A2BB0 /* Placeholders+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35B64E1E9F949C004A2BB0 /* Placeholders+UIKit.swift */; };
+		7C7BE6811E9FE8EE001F7CAF /* Iterators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BE6801E9FE8EE001F7CAF /* Iterators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		7C35B6421E9F925B004A2BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C35B64C1E9F9280004A2BB0 /* Placeholders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholders.swift; sourceTree = "<group>"; };
 		7C35B64E1E9F949C004A2BB0 /* Placeholders+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Placeholders+UIKit.swift"; sourceTree = "<group>"; };
+		7C7BE6801E9FE8EE001F7CAF /* Iterators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iterators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				7C35B6351E9F925A004A2BB0 /* Placeholders.h */,
 				7C35B6361E9F925A004A2BB0 /* Info.plist */,
+				7C7BE6801E9FE8EE001F7CAF /* Iterators.swift */,
 				7C35B64C1E9F9280004A2BB0 /* Placeholders.swift */,
 				7C35B64E1E9F949C004A2BB0 /* Placeholders+UIKit.swift */,
 			);
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C7BE6811E9FE8EE001F7CAF /* Iterators.swift in Sources */,
 				7C35B64F1E9F949C004A2BB0 /* Placeholders+UIKit.swift in Sources */,
 				7C35B64D1E9F9280004A2BB0 /* Placeholders.swift in Sources */,
 			);

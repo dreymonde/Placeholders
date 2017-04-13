@@ -18,6 +18,29 @@ final public class Placeholders {
         self.iterator = AnyIterator(iterator)
     }
     
+    public convenience init(placeholders: [String], options: Options = []) {
+        var finalPlaceholders = placeholders
+        if options.contains(.shuffle) { finalPlaceholders.shuffle() }
+        if options.contains(.infinite) {
+            self.init(iterator: finalPlaceholders.makeIterator().infinite())
+        } else {
+            self.init(iterator: finalPlaceholders.makeIterator())
+        }
+    }
+    
+    public struct Options : OptionSet {
+        
+        public var rawValue: Int
+        
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
+        
+        public static var infinite = Options(rawValue: 1 << 0)
+        public static var shuffle = Options(rawValue: 1 << 1)
+        
+    }
+    
     deinit {
         timer?.invalidate()
     }
