@@ -61,7 +61,7 @@ final public class Placeholders {
         }
     }
     
-    @objc public func act(timer: Timer) {
+    @objc private func act(timer: Timer) {
         if let nextPlaceholder = iterator.next() {
             action(nextPlaceholder)
         } else {
