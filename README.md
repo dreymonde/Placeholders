@@ -1,4 +1,8 @@
 # Placeholders
+
+[![Swift][swift-badge]][swift-url]
+[![Platform][platform-badge]][platform-url]
+
 **Placeholders** gives you the ability to define multiple placeholders for `UITextField`, and also animate their change in the way you like. The result looks like that:
 
 ![Demo](Resources/Demo.gif)
@@ -50,26 +54,28 @@ To define your custom `animation` as, for example, `.pushTransition`, you can ex
 ```swift
 extension UITextField.PlaceholderChange {
     
-    static var fade: UITextField.PlaceholderChange {
+    static var fade: UITextField.PlaceholderChange<Placeholder> {
         return UITextField.PlaceholderChange { (placeholder, textField) in
             let transition = CATransition()
             transition.duration = 0.35
             transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             transition.type = kCATransitionFade
             textField.subviews.first(where: { NSStringFromClass(type(of: $0)) == "UITextFieldLabel" })?.layer.add(transition, forKey: nil)
-            textField.placeholder = placeholder
+            placeholder.set(on: textField)
         }
     }
     
 }
 ```
 
-Or you can use convenience `.caTransition` static function to make your life a bit easier:
+This generic `Placeholder` type and `placeholder.set(on: textField)` syntax exists in order to support `NSAttributedString` as a placeholder.
+
+You can also use convenience `.caTransition` static function to make your life a bit easier:
 
 ```swift
 extension UITextField.PlaceholderChange {
     
-    static var fade: UITextField.PlaceholderChange {
+    static var fade: UITextField.PlaceholderChange<Placeholder> {
         return .caTransition {
             let transition = CATransition()
             transition.duration = 0.35
@@ -92,3 +98,18 @@ placeholders.start(interval: 3.0,
 ```
 
 Neat!
+
+## Installation
+**Placeholders** is available through [Carthage][carthage-url]. To install, just write into your Cartfile:
+
+```ruby
+github "dreymonde/Placeholders" ~> 0.1.0
+```
+
+We also encourage you to write your very own implementation that fits your needs best. Our source code is there to help.
+
+[carthage-url]: https://github.com/Carthage/Carthage
+[swift-badge]: https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat
+[swift-url]: https://swift.org
+[platform-badge]: https://img.shields.io/badge/Platform-iOS-lightgray.svg?style=flat
+[platform-url]: https://developer.apple.com/swift/

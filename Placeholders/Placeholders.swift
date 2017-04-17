@@ -8,17 +8,30 @@
 
 import Foundation
 
-final public class Placeholders {
+public struct PlaceholdersOptions : OptionSet {
     
-    public var iterator: AnyIterator<String>
+    public var rawValue: Int
+    
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+    
+    public static var infinite = PlaceholdersOptions(rawValue: 1 << 0)
+    public static var shuffle = PlaceholdersOptions(rawValue: 1 << 1)
+    
+}
+
+final public class Placeholders<Element> {
+    
+    public var iterator: AnyIterator<Element>
     var timer: Timer?
-    var action: (String) -> () = { _ in }
+    var action: (Element) -> () = { _ in }
     
-    public init<StringIterator : IteratorProtocol>(iterator: StringIterator) where StringIterator.Element == String {
+    public init<Iterator : IteratorProtocol>(iterator: Iterator) where Iterator.Element == Element {
         self.iterator = AnyIterator(iterator)
     }
     
-    public convenience init(placeholders: [String], options: Options = []) {
+    public convenience init(placeholders: [Element], options: PlaceholdersOptions = []) {
         var finalPlaceholders = placeholders
         if options.contains(.shuffle) { finalPlaceholders.shuffle() }
         if options.contains(.infinite) {
@@ -28,24 +41,11 @@ final public class Placeholders {
         }
     }
     
-    public struct Options : OptionSet {
-        
-        public var rawValue: Int
-        
-        public init(rawValue: Int) {
-            self.rawValue = rawValue
-        }
-        
-        public static var infinite = Options(rawValue: 1 << 0)
-        public static var shuffle = Options(rawValue: 1 << 1)
-        
-    }
-    
     deinit {
         timer?.invalidate()
     }
     
-    public func start(interval: TimeInterval, fireInitial: Bool, action: @escaping (String) -> ()) {
+    public func start(interval: TimeInterval, fireInitial: Bool, action: @escaping (Element) -> ()) {
         self.action = action
         let timer = Timer(timeInterval: interval,
                           target: self,
