@@ -38,7 +38,7 @@ placeholders.start(interval: 3.0,
 That's it!
 
 ## Advanced
-**Placeholders** is both easy-to-use and customizable solution. At it's core, `Placeholders` object doesn't know anything about `UITextField`. You can easily use it for other purposes if you wish:
+While being easy-to-use, **Placeholders** can be highly customized. At it's core, `Placeholders` object doesn't know anything about `UITextField`. You can easily use it for other purposes if you wish:
 
 ```swift
 let placeholders = Placeholders(placeholders: ["A", "B", "C"], options: .infinite)
@@ -47,9 +47,9 @@ placeholders.start(interval: 2.0, fireInitial: true, action: { next in
 })
 ```
 
-Actually, all other `UITextField` convenience is just a wrapper around this method.
+Actually, the `UITextField` convenience is just a wrapper around this method.
 
-To define your custom `animation` as, for example, `.pushTransition`, you can extend `UITextField.PlaceholderChange`. Here is, for example, how you can implement your own custom fade animation:
+But if you just want to make a custom `animation` as, for example, `.pushTransition`, you can extend `UITextField.PlaceholderChange`. Here is how you can implement your own custom fade animation:
 
 ```swift
 extension UITextField.PlaceholderChange {
