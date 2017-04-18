@@ -7,6 +7,8 @@
 
 ![Demo](Resources/Demo.gif)
 
+You can read more about the library on [Medium][medium-article-url].
+
 ## Usage
 #### 1. Define a `Placeholder` object in your view controller:
 
@@ -113,3 +115,4 @@ We also encourage you to write your very own implementation that fits your needs
 [swift-url]: https://swift.org
 [platform-badge]: https://img.shields.io/badge/Platform-iOS-lightgray.svg?style=flat
 [platform-url]: https://developer.apple.com/swift/
+[medium-article-url]: https://medium.com/anysuggestion/introducing-placeholders-1cc6927b097d
