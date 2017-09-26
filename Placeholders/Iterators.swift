@@ -37,7 +37,7 @@ public extension IteratorProtocol {
 
 // Inspired by Nate Cook: https://gist.github.com/natecook1000/0ac03efe07f647b46dae
 
-extension MutableCollection where Indices.Iterator.Element == Index {
+extension MutableCollection {
     
     /// Shuffles the contents of this collection.
     internal mutating func shuffle() {
@@ -47,7 +47,7 @@ extension MutableCollection where Indices.Iterator.Element == Index {
             let distance: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
             guard distance != 0 else { continue }
             let i = index(firstUnshuffled, offsetBy: distance)
-            swap(&self[firstUnshuffled], &self[i])
+            self.swapAt(firstUnshuffled, i)
         }
     }
     
